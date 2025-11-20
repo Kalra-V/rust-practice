@@ -1,16 +1,15 @@
 fn main() {
-    let sentence = String::from("IM VANSH KALRA!");
-    let first_word = get_first_word(sentence);
-    println!("{}", first_word);
+    let s1 = String::from("HELLO");
+    let s2 = &s1; // s2 is a reference to s1
+
+    let mut s3 = String::from("WORLD"); // mutable reference
+    update_str(&mut s3);
+
+    println!("s2: {}", s2);
+    println!("s1: {}", s1);
+    println!("s3: {}", s3);
 }
- 
-fn get_first_word(sentence: String) -> String {
-    let mut first_word = String::from("");
-    for char in sentence.chars() {
-        first_word.push(char);
-        if char == ' ' {
-            break;
-        }
-    }
-    return first_word;
+
+fn update_str(s: &mut String) {
+    s.push_str("!");
 }
