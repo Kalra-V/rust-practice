@@ -1,16 +1,20 @@
-use std::fs;
+fn main() {
+    let mut vec = Vec::new();
+    vec.push(1);
+    vec.push(2);
 
-fn main () {
-    let res = fs::read_to_string("example.txt");
+    let even_vec = even_filter(vec);
 
-    match res {
-        Ok(string) => {
-            println!("READING: {}", string)
-        },
-        Err(error) => {
-            println!("ERROR found: {}", error)
+    println!("{:?}", even_vec);
+}
+
+fn even_filter(vec: Vec<i32>) -> Vec<i32> {
+    let mut new_vec = Vec::new();
+    for val in vec {
+        if val % 2 == 0 {
+            new_vec.push(val);
         }
     }
 
-    print!("works")
+    return new_vec;
 }
