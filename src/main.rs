@@ -1,15 +1,17 @@
-fn main() {
-    let s1 = String::from("HELLO");
-    let s2 = &s1; // s2 is a reference to s1
-
-    let mut s3 = String::from("WORLD"); // mutable reference
-    update_str(&mut s3);
-
-    println!("s2: {}", s2);
-    println!("s1: {}", s1);
-    println!("s3: {}", s3);
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
 }
 
-fn update_str(s: &mut String) {
-    s.push_str("!");
+fn main() {
+    let user1 = User {
+        active: true,
+        username: String::from("Kin"),
+        email: String::from("vanshkalra645@gmail.com"),
+        sign_in_count: 13321312,
+    };
+
+    println!("{}'s email is {}", user1.username, user1.email);
 }
